@@ -1,0 +1,62 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+do {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+body div.Sales {
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 300px;
+    padding-left:80px;
+    border: 2px solid;
+    border-color: cyan;
+    background-color: slategrey;
+    border-radius: 50px;
+}
+body footer{
+    margin-top: 150px;
+}
+div.SomeLinksFooter {
+    display: flex;
+    justify-content: space-evenly;
+}
+div.SomeTextFooter{
+    display:flex;
+    justify-content:flex-end;
+}
+div.SomeInfoFooter {
+    display: flex;
+    justify-content: center;
+}
+footer.Footer div{
+    margin: 50px;
+}
+p.Text{
+    align-items: flex-end;
+}
