@@ -26,5 +26,9 @@ namespace MyFirstMVC.Controllers
 
             return View();
         }
+        public ActionResult EF()
+        {
+            return View();
+        }
     }
 }
