@@ -12,18 +12,19 @@ namespace MyFirstMVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ApplicationForTheConditionOfTheAircraft
+    public partial class Posts
     {
-        public int ApplicationID { get; set; }
-        public int PlaneID { get; set; }
-        public bool Status { get; set; }
-        public string Comment { get; set; }
-        public int TheSupplierID { get; set; }
-        public int TechnicianID { get; set; }
-        public int Company { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Posts()
+        {
+            this.Stuff = new HashSet<Stuff>();
+        }
     
-        public virtual Plane Plane { get; set; }
-        public virtual Stuff Stuff { get; set; }
-        public virtual Suppliers Suppliers { get; set; }
+        public int PostId { get; set; }
+        public string PostName { get; set; }
+        public int Salary { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Stuff> Stuff { get; set; }
     }
 }

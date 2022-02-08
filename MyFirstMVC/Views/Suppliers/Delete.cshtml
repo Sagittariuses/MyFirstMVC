@@ -1,0 +1,78 @@
+﻿@model MyFirstMVC.Models.Suppliers
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление контрагента №@Html.DisplayFor(model => model.SupplierID)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Компания
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+
+        <dt>
+            ID Представителя
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepresentativeID)
+        </dd>
+
+        <dt>
+            Фамилия
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepresentativeSurname)
+        </dd>
+
+        <dt>
+            Имя
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepresentativeName)
+        </dd>
+
+        <dt>
+            Отчество
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepresentativePatronymic)
+        </dd>
+
+        <dt>
+            Телефон
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepresentativeNumber)
+        </dd>
+
+        <dt>
+            Почта
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepresentativeEmail)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" />  или вернуться
+            @Html.ActionLink("Назад", "Index")?
+        </div>
+    }
+</div>

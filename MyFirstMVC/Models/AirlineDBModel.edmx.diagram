@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3bd5f22704ef4ed0bf9b519115596e92" Name="Diagram1">
-        <EntityTypeShape EntityType="AirlineModel.ApplicationForTheConditionOfTheAircraft" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirlineModel.Client" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirlineModel.ClientType" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirlineModel.Plane" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirlineModel.Post" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirlineModel.Schedule" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+      <Diagram DiagramId="41843813e2c6460f8d70ec181ab05dbb" Name="Diagram1">
+        <EntityTypeShape EntityType="AirlineModel.ApplicationForTheConditionOfTheAircraft" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Client" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.ClientType" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Plane" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Posts" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Schedule" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
         <EntityTypeShape EntityType="AirlineModel.Stuff" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirlineModel.Supplier" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirlineModel.sysdiagram" Width="1.5" PointX="5.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirlineModel.TicketInfo" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.Suppliers" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirlineModel.TicketInfo" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
         <AssociationConnector Association="AirlineModel.FK_ApplicationForTheConditionOfTheAircraft_Plane" ManuallyRouted="false" />
         <AssociationConnector Association="AirlineModel.FK_ApplicationForTheConditionOfTheAircraft_Stuff" ManuallyRouted="false" />
         <AssociationConnector Association="AirlineModel.FK_ApplicationForTheConditionOfTheAircraft_Suppliers" ManuallyRouted="false" />

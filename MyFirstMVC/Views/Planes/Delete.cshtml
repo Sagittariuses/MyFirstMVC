@@ -1,0 +1,111 @@
+﻿@model MyFirstMVC.Models.Plane
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h2>Удаление самолёта №@Html.DisplayFor(model => model.PlaneID)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Название
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaneName)
+        </dd>
+
+        <dt>
+            Модель
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            Кол-во мест
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityOfSeats)
+        </dd>
+
+        <dt>
+            Единиц в парке
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfUnitsInThePark)
+        </dd>
+
+        <dt>
+            Тип
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Длина
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+
+        <dt>
+            Размах крыльев
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wingspan)
+        </dd>
+
+        <dt>
+            Круизная скорость
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CruisingSpeed)
+        </dd>
+
+        <dt>
+            Максимальная высота полёта
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximumFlightAltitude)
+        </dd>
+
+        <dt>
+            Максимальная дистанция полёта
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaximumFlightRange)
+        </dd>
+
+        <dt>
+            Контрагент
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suppliers.Company)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> или вернуться
+            @Html.ActionLink("Назад", "Index")?
+        </div>
+    }
+</div>

@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище AirlineModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище AirlineModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ApplicationForTheConditionOfTheAircraft">
           <Key>
             <PropertyRef Name="ApplicationID" />
           </Key>
-          <Property Name="ApplicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
           <Property Name="PlaneID" Type="int" Nullable="false" />
           <Property Name="Status" Type="bit" Nullable="false" />
           <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
@@ -21,9 +21,9 @@
           <Key>
             <PropertyRef Name="ClientID" />
           </Key>
-          <Property Name="ClientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Gender" Type="nvarchar" MaxLength="1" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
@@ -37,7 +37,7 @@
           <Key>
             <PropertyRef Name="ClientTypeID" />
           </Key>
-          <Property Name="ClientTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientTypeID" Type="int" Nullable="false" />
           <Property Name="TypeOfClient" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Discount" Type="int" Nullable="false" />
         </EntityType>
@@ -45,7 +45,7 @@
           <Key>
             <PropertyRef Name="PlaneID" />
           </Key>
-          <Property Name="PlaneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlaneID" Type="int" Nullable="false" />
           <Property Name="PlaneName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="QuantityOfSeats" Type="int" Nullable="false" />
@@ -62,7 +62,7 @@
           <Key>
             <PropertyRef Name="PostId" />
           </Key>
-          <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostId" Type="int" Nullable="false" />
           <Property Name="PostName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Salary" Type="int" Nullable="false" />
         </EntityType>
@@ -70,7 +70,7 @@
           <Key>
             <PropertyRef Name="ScheduleID" />
           </Key>
-          <Property Name="ScheduleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScheduleID" Type="int" Nullable="false" />
           <Property Name="PlaceOfDeparture" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PlaceOfArrival" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
@@ -81,9 +81,9 @@
           <Key>
             <PropertyRef Name="StuffID" />
           </Key>
-          <Property Name="StuffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StuffID" Type="int" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Gender" Type="nvarchar" MaxLength="1" Nullable="false" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -96,11 +96,11 @@
           <Key>
             <PropertyRef Name="SupplierID" />
           </Key>
-          <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierID" Type="int" Nullable="false" />
           <Property Name="Company" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RepresentativeID" Type="int" Nullable="false" />
-          <Property Name="RepresentativeFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="RepresentativeLastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RepresentativeSurname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RepresentativeName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RepresentativePatronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RepresentativeNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RepresentativeEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -119,7 +119,7 @@
           <Key>
             <PropertyRef Name="TicketID" />
           </Key>
-          <Property Name="TicketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
           <Property Name="ClientID" Type="int" Nullable="false" />
           <Property Name="PlaneID" Type="int" Nullable="false" />
           <Property Name="ScheduleID" Type="int" Nullable="false" />
@@ -295,45 +295,49 @@
           <Key>
             <PropertyRef Name="ApplicationID" />
           </Key>
-          <Property Name="ApplicationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="PlaneID" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TheSupplierID" Type="Int32" Nullable="false" />
+          <Property Name="TechnicianID" Type="Int32" Nullable="false" />
           <Property Name="Company" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Plane" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Plane" FromRole="ApplicationForTheConditionOfTheAircraft" ToRole="Plane" />
           <NavigationProperty Name="Stuff" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Stuff" FromRole="ApplicationForTheConditionOfTheAircraft" ToRole="Stuff" />
-          <NavigationProperty Name="Supplier" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Suppliers" FromRole="ApplicationForTheConditionOfTheAircraft" ToRole="Suppliers" />
+          <NavigationProperty Name="Suppliers" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Suppliers" FromRole="ApplicationForTheConditionOfTheAircraft" ToRole="Suppliers" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="ClientID" />
           </Key>
-          <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
           <Property Name="Document" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="BirthdayDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="PhoneNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="ClientType" Relationship="Self.FK_Client_ClientType" FromRole="Client" ToRole="ClientType" />
-          <NavigationProperty Name="TicketInfoes" Relationship="Self.FK_TicketInfo_Client" FromRole="Client" ToRole="TicketInfo" />
+          <NavigationProperty Name="TicketInfo" Relationship="Self.FK_TicketInfo_Client" FromRole="Client" ToRole="TicketInfo" />
         </EntityType>
         <EntityType Name="ClientType">
           <Key>
             <PropertyRef Name="ClientTypeID" />
           </Key>
-          <Property Name="ClientTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientTypeID" Type="Int32" Nullable="false" />
           <Property Name="TypeOfClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Discount" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Clients" Relationship="Self.FK_Client_ClientType" FromRole="ClientType" ToRole="Client" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Client_ClientType" FromRole="ClientType" ToRole="Client" />
         </EntityType>
         <EntityType Name="Plane">
           <Key>
             <PropertyRef Name="PlaneID" />
           </Key>
-          <Property Name="PlaneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaneID" Type="Int32" Nullable="false" />
           <Property Name="PlaneName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="QuantityOfSeats" Type="Int32" Nullable="false" />
@@ -344,63 +348,65 @@
           <Property Name="CruisingSpeed" Type="Int32" Nullable="false" />
           <Property Name="MaximumFlightAltitude" Type="Int32" Nullable="false" />
           <Property Name="MaximumFlightRange" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ApplicationForTheConditionOfTheAircrafts" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Plane" FromRole="Plane" ToRole="ApplicationForTheConditionOfTheAircraft" />
-          <NavigationProperty Name="Supplier" Relationship="Self.FK_Plane_Suppliers" FromRole="Plane" ToRole="Suppliers" />
+          <Property Name="SupplierId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ApplicationForTheConditionOfTheAircraft" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Plane" FromRole="Plane" ToRole="ApplicationForTheConditionOfTheAircraft" />
+          <NavigationProperty Name="Suppliers" Relationship="Self.FK_Plane_Suppliers" FromRole="Plane" ToRole="Suppliers" />
           <NavigationProperty Name="TicketInfo" Relationship="Self.FK_TicketInfo_Plane" FromRole="Plane" ToRole="TicketInfo" />
         </EntityType>
-        <EntityType Name="Post">
+        <EntityType Name="Posts">
           <Key>
             <PropertyRef Name="PostId" />
           </Key>
-          <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostId" Type="Int32" Nullable="false" />
           <Property Name="PostName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Salary" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Stuffs" Relationship="Self.FK_Stuff_Posts" FromRole="Posts" ToRole="Stuff" />
+          <NavigationProperty Name="Stuff" Relationship="Self.FK_Stuff_Posts" FromRole="Posts" ToRole="Stuff" />
         </EntityType>
         <EntityType Name="Schedule">
           <Key>
             <PropertyRef Name="ScheduleID" />
           </Key>
-          <Property Name="ScheduleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScheduleID" Type="Int32" Nullable="false" />
           <Property Name="PlaceOfDeparture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PlaceOfArrival" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="NumberOfTicketsPurchased" Type="Int32" Nullable="false" />
           <Property Name="TotalTickets" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TicketInfoes" Relationship="Self.FK_TicketInfo_Schedule" FromRole="Schedule" ToRole="TicketInfo" />
+          <NavigationProperty Name="TicketInfo" Relationship="Self.FK_TicketInfo_Schedule" FromRole="Schedule" ToRole="TicketInfo" />
         </EntityType>
         <EntityType Name="Stuff">
           <Key>
             <PropertyRef Name="StuffID" />
           </Key>
-          <Property Name="StuffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StuffID" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="BirthdayDate" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="ApplicationForTheConditionOfTheAircrafts" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Stuff" FromRole="Stuff" ToRole="ApplicationForTheConditionOfTheAircraft" />
-          <NavigationProperty Name="Post" Relationship="Self.FK_Stuff_Posts" FromRole="Stuff" ToRole="Posts" />
+          <Property Name="PostID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ApplicationForTheConditionOfTheAircraft" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Stuff" FromRole="Stuff" ToRole="ApplicationForTheConditionOfTheAircraft" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK_Stuff_Posts" FromRole="Stuff" ToRole="Posts" />
         </EntityType>
-        <EntityType Name="Supplier">
+        <EntityType Name="Suppliers">
           <Key>
             <PropertyRef Name="SupplierID" />
           </Key>
-          <Property Name="SupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
           <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RepresentativeID" Type="Int32" Nullable="false" />
-          <Property Name="RepresentativeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="RepresentativeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RepresentativeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RepresentativeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RepresentativePatronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RepresentativeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RepresentativeEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="ApplicationForTheConditionOfTheAircrafts" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Suppliers" FromRole="Suppliers" ToRole="ApplicationForTheConditionOfTheAircraft" />
-          <NavigationProperty Name="Planes" Relationship="Self.FK_Plane_Suppliers" FromRole="Suppliers" ToRole="Plane" />
+          <NavigationProperty Name="ApplicationForTheConditionOfTheAircraft" Relationship="Self.FK_ApplicationForTheConditionOfTheAircraft_Suppliers" FromRole="Suppliers" ToRole="ApplicationForTheConditionOfTheAircraft" />
+          <NavigationProperty Name="Plane" Relationship="Self.FK_Plane_Suppliers" FromRole="Suppliers" ToRole="Plane" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -414,8 +420,10 @@
           <Key>
             <PropertyRef Name="TicketID" />
           </Key>
-          <Property Name="TicketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TicketID" Type="Int32" Nullable="false" />
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
           <Property Name="PlaneID" Type="Int32" Nullable="false" />
+          <Property Name="ScheduleID" Type="Int32" Nullable="false" />
           <Property Name="PlaceOfDeparture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PlaceOfArrival" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DepartureDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -429,26 +437,74 @@
         <Association Name="FK_ApplicationForTheConditionOfTheAircraft_Plane">
           <End Role="Plane" Type="Self.Plane" Multiplicity="1" />
           <End Role="ApplicationForTheConditionOfTheAircraft" Type="Self.ApplicationForTheConditionOfTheAircraft" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plane">
+              <PropertyRef Name="PlaneID" />
+            </Principal>
+            <Dependent Role="ApplicationForTheConditionOfTheAircraft">
+              <PropertyRef Name="PlaneID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_ApplicationForTheConditionOfTheAircraft_Stuff">
           <End Role="Stuff" Type="Self.Stuff" Multiplicity="1" />
           <End Role="ApplicationForTheConditionOfTheAircraft" Type="Self.ApplicationForTheConditionOfTheAircraft" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stuff">
+              <PropertyRef Name="StuffID" />
+            </Principal>
+            <Dependent Role="ApplicationForTheConditionOfTheAircraft">
+              <PropertyRef Name="TechnicianID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_ApplicationForTheConditionOfTheAircraft_Suppliers">
-          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
           <End Role="ApplicationForTheConditionOfTheAircraft" Type="Self.ApplicationForTheConditionOfTheAircraft" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="ApplicationForTheConditionOfTheAircraft">
+              <PropertyRef Name="TheSupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Client_ClientType">
           <End Role="ClientType" Type="Self.ClientType" Multiplicity="1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientType">
+              <PropertyRef Name="ClientTypeID" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_TicketInfo_Client">
           <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="TicketInfo" Type="Self.TicketInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientID" />
+            </Principal>
+            <Dependent Role="TicketInfo">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Plane_Suppliers">
-          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
           <End Role="Plane" Type="Self.Plane" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Plane">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_TicketInfo_Plane">
           <End Role="Plane" Type="Self.Plane" Multiplicity="1" />
@@ -463,59 +519,75 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Stuff_Posts">
-          <End Role="Posts" Type="Self.Post" Multiplicity="1" />
+          <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
           <End Role="Stuff" Type="Self.Stuff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posts">
+              <PropertyRef Name="PostId" />
+            </Principal>
+            <Dependent Role="Stuff">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_TicketInfo_Schedule">
           <End Role="Schedule" Type="Self.Schedule" Multiplicity="1" />
           <End Role="TicketInfo" Type="Self.TicketInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedule">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="TicketInfo">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AirlineEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ApplicationForTheConditionOfTheAircrafts" EntityType="Self.ApplicationForTheConditionOfTheAircraft" />
-          <EntitySet Name="Clients" EntityType="Self.Client" />
-          <EntitySet Name="ClientTypes" EntityType="Self.ClientType" />
-          <EntitySet Name="Planes" EntityType="Self.Plane" />
-          <EntitySet Name="Posts" EntityType="Self.Post" />
-          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
-          <EntitySet Name="Stuffs" EntityType="Self.Stuff" />
-          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="TicketInfoes" EntityType="Self.TicketInfo" />
+        <EntityContainer Name="AirlineEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ApplicationForTheConditionOfTheAircraft" EntityType="Self.ApplicationForTheConditionOfTheAircraft" />
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="ClientType" EntityType="Self.ClientType" />
+          <EntitySet Name="Plane" EntityType="Self.Plane" />
+          <EntitySet Name="Posts" EntityType="Self.Posts" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" />
+          <EntitySet Name="Stuff" EntityType="Self.Stuff" />
+          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TicketInfo" EntityType="Self.TicketInfo" />
           <AssociationSet Name="FK_ApplicationForTheConditionOfTheAircraft_Plane" Association="Self.FK_ApplicationForTheConditionOfTheAircraft_Plane">
-            <End Role="Plane" EntitySet="Planes" />
-            <End Role="ApplicationForTheConditionOfTheAircraft" EntitySet="ApplicationForTheConditionOfTheAircrafts" />
+            <End Role="Plane" EntitySet="Plane" />
+            <End Role="ApplicationForTheConditionOfTheAircraft" EntitySet="ApplicationForTheConditionOfTheAircraft" />
           </AssociationSet>
           <AssociationSet Name="FK_ApplicationForTheConditionOfTheAircraft_Stuff" Association="Self.FK_ApplicationForTheConditionOfTheAircraft_Stuff">
-            <End Role="Stuff" EntitySet="Stuffs" />
-            <End Role="ApplicationForTheConditionOfTheAircraft" EntitySet="ApplicationForTheConditionOfTheAircrafts" />
+            <End Role="Stuff" EntitySet="Stuff" />
+            <End Role="ApplicationForTheConditionOfTheAircraft" EntitySet="ApplicationForTheConditionOfTheAircraft" />
           </AssociationSet>
           <AssociationSet Name="FK_ApplicationForTheConditionOfTheAircraft_Suppliers" Association="Self.FK_ApplicationForTheConditionOfTheAircraft_Suppliers">
             <End Role="Suppliers" EntitySet="Suppliers" />
-            <End Role="ApplicationForTheConditionOfTheAircraft" EntitySet="ApplicationForTheConditionOfTheAircrafts" />
+            <End Role="ApplicationForTheConditionOfTheAircraft" EntitySet="ApplicationForTheConditionOfTheAircraft" />
           </AssociationSet>
           <AssociationSet Name="FK_Client_ClientType" Association="Self.FK_Client_ClientType">
-            <End Role="ClientType" EntitySet="ClientTypes" />
-            <End Role="Client" EntitySet="Clients" />
+            <End Role="ClientType" EntitySet="ClientType" />
+            <End Role="Client" EntitySet="Client" />
           </AssociationSet>
           <AssociationSet Name="FK_TicketInfo_Client" Association="Self.FK_TicketInfo_Client">
-            <End Role="Client" EntitySet="Clients" />
-            <End Role="TicketInfo" EntitySet="TicketInfoes" />
+            <End Role="Client" EntitySet="Client" />
+            <End Role="TicketInfo" EntitySet="TicketInfo" />
           </AssociationSet>
           <AssociationSet Name="FK_Plane_Suppliers" Association="Self.FK_Plane_Suppliers">
             <End Role="Suppliers" EntitySet="Suppliers" />
-            <End Role="Plane" EntitySet="Planes" />
+            <End Role="Plane" EntitySet="Plane" />
           </AssociationSet>
           <AssociationSet Name="FK_TicketInfo_Plane" Association="Self.FK_TicketInfo_Plane">
-            <End Role="Plane" EntitySet="Planes" />
-            <End Role="TicketInfo" EntitySet="TicketInfoes" />
+            <End Role="Plane" EntitySet="Plane" />
+            <End Role="TicketInfo" EntitySet="TicketInfo" />
           </AssociationSet>
           <AssociationSet Name="FK_Stuff_Posts" Association="Self.FK_Stuff_Posts">
             <End Role="Posts" EntitySet="Posts" />
-            <End Role="Stuff" EntitySet="Stuffs" />
+            <End Role="Stuff" EntitySet="Stuff" />
           </AssociationSet>
           <AssociationSet Name="FK_TicketInfo_Schedule" Association="Self.FK_TicketInfo_Schedule">
-            <End Role="Schedule" EntitySet="Schedules" />
-            <End Role="TicketInfo" EntitySet="TicketInfoes" />
+            <End Role="Schedule" EntitySet="Schedule" />
+            <End Role="TicketInfo" EntitySet="TicketInfo" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -523,25 +595,29 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище AirlineModelContainer" CdmEntityContainer="AirlineEntities1">
-          <EntitySetMapping Name="ApplicationForTheConditionOfTheAircrafts">
+        <EntityContainerMapping StorageEntityContainer="Хранилище AirlineModelContainer" CdmEntityContainer="AirlineEntities">
+          <EntitySetMapping Name="ApplicationForTheConditionOfTheAircraft">
             <EntityTypeMapping TypeName="AirlineModel.ApplicationForTheConditionOfTheAircraft">
               <MappingFragment StoreEntitySet="ApplicationForTheConditionOfTheAircraft">
                 <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="TheSupplierID" ColumnName="TheSupplierID" />
+                <ScalarProperty Name="TechnicianID" ColumnName="TechnicianID" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Clients">
+          <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="AirlineModel.Client">
               <MappingFragment StoreEntitySet="Client">
                 <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Document" ColumnName="Document" />
                 <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
                 <ScalarProperty Name="BirthdayDate" ColumnName="BirthdayDate" />
@@ -550,7 +626,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ClientTypes">
+          <EntitySetMapping Name="ClientType">
             <EntityTypeMapping TypeName="AirlineModel.ClientType">
               <MappingFragment StoreEntitySet="ClientType">
                 <ScalarProperty Name="ClientTypeID" ColumnName="ClientTypeID" />
@@ -559,7 +635,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Planes">
+          <EntitySetMapping Name="Plane">
             <EntityTypeMapping TypeName="AirlineModel.Plane">
               <MappingFragment StoreEntitySet="Plane">
                 <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
@@ -573,11 +649,12 @@
                 <ScalarProperty Name="CruisingSpeed" ColumnName="CruisingSpeed" />
                 <ScalarProperty Name="MaximumFlightAltitude" ColumnName="MaximumFlightAltitude" />
                 <ScalarProperty Name="MaximumFlightRange" ColumnName="MaximumFlightRange" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Posts">
-            <EntityTypeMapping TypeName="AirlineModel.Post">
+            <EntityTypeMapping TypeName="AirlineModel.Posts">
               <MappingFragment StoreEntitySet="Posts">
                 <ScalarProperty Name="PostId" ColumnName="PostId" />
                 <ScalarProperty Name="PostName" ColumnName="PostName" />
@@ -585,7 +662,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Schedules">
+          <EntitySetMapping Name="Schedule">
             <EntityTypeMapping TypeName="AirlineModel.Schedule">
               <MappingFragment StoreEntitySet="Schedule">
                 <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
@@ -597,29 +674,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Stuffs">
+          <EntitySetMapping Name="Stuff">
             <EntityTypeMapping TypeName="AirlineModel.Stuff">
               <MappingFragment StoreEntitySet="Stuff">
                 <ScalarProperty Name="StuffID" ColumnName="StuffID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
                 <ScalarProperty Name="BirthdayDate" ColumnName="BirthdayDate" />
+                <ScalarProperty Name="PostID" ColumnName="PostID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="AirlineModel.Supplier">
+            <EntityTypeMapping TypeName="AirlineModel.Suppliers">
               <MappingFragment StoreEntitySet="Suppliers">
                 <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="RepresentativeID" ColumnName="RepresentativeID" />
-                <ScalarProperty Name="RepresentativeFirstName" ColumnName="RepresentativeFirstName" />
-                <ScalarProperty Name="RepresentativeLastName" ColumnName="RepresentativeLastName" />
+                <ScalarProperty Name="RepresentativeSurname" ColumnName="RepresentativeSurname" />
+                <ScalarProperty Name="RepresentativeName" ColumnName="RepresentativeName" />
                 <ScalarProperty Name="RepresentativePatronymic" ColumnName="RepresentativePatronymic" />
                 <ScalarProperty Name="RepresentativeNumber" ColumnName="RepresentativeNumber" />
                 <ScalarProperty Name="RepresentativeEmail" ColumnName="RepresentativeEmail" />
@@ -627,7 +705,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="AirlineModel.sysdiagram">
+            <EntityTypeMapping TypeName="AirlineModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -637,11 +715,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TicketInfoes">
+          <EntitySetMapping Name="TicketInfo">
             <EntityTypeMapping TypeName="AirlineModel.TicketInfo">
               <MappingFragment StoreEntitySet="TicketInfo">
                 <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
                 <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
                 <ScalarProperty Name="PlaceOfDeparture" ColumnName="PlaceOfDeparture" />
                 <ScalarProperty Name="PlaceOfArrival" ColumnName="PlaceOfArrival" />
                 <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
@@ -651,70 +731,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK_ApplicationForTheConditionOfTheAircraft_Plane" TypeName="AirlineModel.FK_ApplicationForTheConditionOfTheAircraft_Plane" StoreEntitySet="ApplicationForTheConditionOfTheAircraft">
-            <EndProperty Name="Plane">
-              <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
-            </EndProperty>
-            <EndProperty Name="ApplicationForTheConditionOfTheAircraft">
-              <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ApplicationForTheConditionOfTheAircraft_Stuff" TypeName="AirlineModel.FK_ApplicationForTheConditionOfTheAircraft_Stuff" StoreEntitySet="ApplicationForTheConditionOfTheAircraft">
-            <EndProperty Name="Stuff">
-              <ScalarProperty Name="StuffID" ColumnName="TechnicianID" />
-            </EndProperty>
-            <EndProperty Name="ApplicationForTheConditionOfTheAircraft">
-              <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ApplicationForTheConditionOfTheAircraft_Suppliers" TypeName="AirlineModel.FK_ApplicationForTheConditionOfTheAircraft_Suppliers" StoreEntitySet="ApplicationForTheConditionOfTheAircraft">
-            <EndProperty Name="Suppliers">
-              <ScalarProperty Name="SupplierID" ColumnName="TheSupplierID" />
-            </EndProperty>
-            <EndProperty Name="ApplicationForTheConditionOfTheAircraft">
-              <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Client_ClientType" TypeName="AirlineModel.FK_Client_ClientType" StoreEntitySet="Client">
-            <EndProperty Name="ClientType">
-              <ScalarProperty Name="ClientTypeID" ColumnName="Type" />
-            </EndProperty>
-            <EndProperty Name="Client">
-              <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_TicketInfo_Client" TypeName="AirlineModel.FK_TicketInfo_Client" StoreEntitySet="TicketInfo">
-            <EndProperty Name="Client">
-              <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-            </EndProperty>
-            <EndProperty Name="TicketInfo">
-              <ScalarProperty Name="TicketID" ColumnName="TicketID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Plane_Suppliers" TypeName="AirlineModel.FK_Plane_Suppliers" StoreEntitySet="Plane">
-            <EndProperty Name="Suppliers">
-              <ScalarProperty Name="SupplierID" ColumnName="SupplierId" />
-            </EndProperty>
-            <EndProperty Name="Plane">
-              <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Stuff_Posts" TypeName="AirlineModel.FK_Stuff_Posts" StoreEntitySet="Stuff">
-            <EndProperty Name="Posts">
-              <ScalarProperty Name="PostId" ColumnName="PostID" />
-            </EndProperty>
-            <EndProperty Name="Stuff">
-              <ScalarProperty Name="StuffID" ColumnName="StuffID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_TicketInfo_Schedule" TypeName="AirlineModel.FK_TicketInfo_Schedule" StoreEntitySet="TicketInfo">
-            <EndProperty Name="Schedule">
-              <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
-            </EndProperty>
-            <EndProperty Name="TicketInfo">
-              <ScalarProperty Name="TicketID" ColumnName="TicketID" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -729,9 +745,9 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>

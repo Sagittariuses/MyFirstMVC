@@ -1,0 +1,117 @@
+﻿@model IEnumerable<MyFirstMVC.Models.Plane>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="ControllerTitle">Парк самолётов</h2>
+
+<p >
+    @Html.ActionLink("Добавить самолёт", "Create", null, new { @style = "color: white; text-decoration: none " })
+</p>
+<table class="TextSlots">
+    <tr>
+        <th>
+            Название
+        </th>
+        <th>
+            Модель
+        </th>
+        <th>
+            Кол-во мест
+        </th>
+        <th>
+            Шт. в парке
+        </th>
+        <th>
+            Тип
+        </th>
+        <th>
+            Длина
+        </th>
+        <th>
+            Размах крыльев
+        </th>
+        <th>
+            Круизная скорость
+        </th>
+        <th>
+            Макс. выс. полёта
+        </th>
+        <th>
+            Макс. дист. полёта
+        </th>
+        <th>
+            Контрагент
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="AllSlots">
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaneName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantityOfSeats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfUnitsInThePark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wingspan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CruisingSpeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaximumFlightAltitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaximumFlightRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suppliers.Company)
+            </td>
+            <td>
+                <table>
+                    @for (int i = 0; i < 3; i++)
+                    {
+                        <tr>
+                            @if (i == 0)
+                            {
+                                <td>
+                                    @Html.ActionLink("Редактировать самолёт", "Edit", new { id = item.PlaneID })
+                                </td>
+                            }
+                            else if (i == 1)
+                            {
+                                <td>
+                                    @Html.ActionLink("Подробнее о самолёте", "Details", new { id = item.PlaneID })
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @Html.ActionLink("Удалить самолёт", "Delete", new { id = item.PlaneID })
+                                </td>
+                            }
+                        </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+    }
+
+</table>

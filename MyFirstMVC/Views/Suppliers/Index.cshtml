@@ -1,0 +1,91 @@
+﻿@model IEnumerable<MyFirstMVC.Models.Suppliers>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Контрагенты</h2>
+
+<p>
+    @Html.ActionLink("Добавить контрагента", "Create")
+</p>
+<table class="TextSlots">
+    <tr>
+        <th>
+            Компания
+        </th>
+        <th>
+            ID Представителя
+        </th>
+        <th>
+            Фамилия
+        </th>
+        <th>
+            Имя
+        </th>
+        <th>
+            Отчества
+        </th>
+        <th>
+            Телефон
+        </th>
+        <th>
+            Почта
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="AllSlots">
+        <td>
+            @Html.DisplayFor(modelItem => item.Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepresentativeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepresentativeSurname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepresentativeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepresentativePatronymic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepresentativeNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepresentativeEmail)
+        </td>
+        <td>
+            <table>
+                @for (int i = 0; i < 3; i++)
+                {
+                    <tr>
+                        @if (i == 0)
+                        {
+                            <td>
+                                @Html.ActionLink("Редактировать контрагента", "Edit", new { id = item.SupplierID })
+                            </td>
+                        }
+                        else if (i == 1)
+                        {
+                            <td>
+                                @Html.ActionLink("Подробнее о контрагенте", "Details", new { id = item.SupplierID })
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                @Html.ActionLink("Удалить контрагента", "Delete", new { id = item.SupplierID })
+                            </td>
+                        }
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+}
+
+</table>

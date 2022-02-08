@@ -8,13 +8,13 @@ namespace MyFirstMVC.ConnectHelper
 {
     public class Helper
     {
-        private static AirlineEntities1 ConObj;
+        private static AirlineEntities ConObj;
 
-        public static AirlineEntities1 GetContext()
+        public static AirlineEntities GetContext()
         {
             if (ConObj == null)
             {
-                ConObj = new AirlineEntities1();
+                ConObj = new AirlineEntities();
             }
             return ConObj;
         }

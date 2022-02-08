@@ -12,27 +12,27 @@ namespace MyFirstMVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Stuff
+    public partial class Suppliers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Stuff()
+        public Suppliers()
         {
             this.ApplicationForTheConditionOfTheAircraft = new HashSet<ApplicationForTheConditionOfTheAircraft>();
+            this.Plane = new HashSet<Plane>();
         }
     
-        public int StuffID { get; set; }
-        public string Surname { get; set; }
-        public string Name { get; set; }
-        public string Patronymic { get; set; }
-        public string Gender { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public System.DateTime RegistrationDate { get; set; }
-        public System.DateTime BirthdayDate { get; set; }
-        public int PostID { get; set; }
+        public int SupplierID { get; set; }
+        public string Company { get; set; }
+        public int RepresentativeID { get; set; }
+        public string RepresentativeSurname { get; set; }
+        public string RepresentativeName { get; set; }
+        public string RepresentativePatronymic { get; set; }
+        public string RepresentativeNumber { get; set; }
+        public string RepresentativeEmail { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ApplicationForTheConditionOfTheAircraft> ApplicationForTheConditionOfTheAircraft { get; set; }
-        public virtual Posts Posts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Plane> Plane { get; set; }
     }
 }

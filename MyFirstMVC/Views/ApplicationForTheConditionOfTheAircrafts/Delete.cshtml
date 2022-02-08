@@ -1,0 +1,70 @@
+﻿@model MyFirstMVC.Models.ApplicationForTheConditionOfTheAircraft
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление заявки №@Html.DisplayFor(model => model.ApplicationID)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Закрыта
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            Комментарий
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+        <dt>
+            Компания
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+
+        <dt>
+            Самолёт
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plane.PlaneName)
+        </dd>
+
+        <dt>
+            Техник
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stuff.Surname)
+        </dd>
+
+        <dt>
+            Поставщик
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suppliers.Company)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> или вернуться 
+            @Html.ActionLink("Назад", "Index")?
+        </div>
+    }
+</div>

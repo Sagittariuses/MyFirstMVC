@@ -17,18 +17,89 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("CityAirline", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
             </div>
+            
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Info", "About", "Home")</li>
-                    <li>@Html.ActionLink("Our contacts", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("EF", "EF", "EF")</li>
+                <ul class="nav navbar-nav" style="padding-top: 5px; color: white" >
+                    <li>
+                        <button class="CityAirline">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            @Html.ActionLink("CityAirline", "Index", "Home", null, new { @style = "color: white; text-decoration: none " })
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Links">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            @Html.ActionLink("Главная", "Index", "Home", null, new { @style = "color: white; text-decoration: none " })
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Links">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            @Html.ActionLink("Клиенты", "Index", "Clients", null, new { @style = "color: white; text-decoration: none " })
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Links">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            @Html.ActionLink("Заявки", "Index", "ApplicationForTheConditionOfTheAircrafts", null, new { @style = "color: white; text-decoration: none " })
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Links">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            @Html.ActionLink("Расписание", "Index", "Schedules", null, new { @style = "color: white; text-decoration: none " })
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Links">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            @Html.ActionLink("Сотрудники", "Index", "Stuffs", null, new { @style = "color: white; text-decoration: none " })
+                        </button>
+
+                    </li>
+                    <li>
+                        <button class="Links">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            @Html.ActionLink("Контрагенты", "Index", "Suppliers", null, new { @style = "color: white; text-decoration: none " })
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Links">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            @Html.ActionLink("Самолёты", "Index", "Planes", null, new { @style = "color: white; text-decoration: none " })
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
+    
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -42,14 +113,14 @@
                 <a href="https://t.me/stickerus"> Telegram </a>
             </div>
             <div class="SomeInfoFooter">
-                <a>&nbsp; About us &nbsp;</a> *
-                <a>&nbsp; Adverb &nbsp;</a> *
-                <a>&nbsp; Help &nbsp;</a> *
-                <a>&nbsp; Affiliate Program &nbsp;</a> *
-                <a>&nbsp; Rules &nbsp;</a>
+                <a>&nbsp; О нас &nbsp;</a> *
+                <a>&nbsp; Реклама &nbsp;</a> *
+                <a>&nbsp; Помощь &nbsp;</a> *
+                <a>&nbsp; Партнерская программа &nbsp;</a> *
+                <a>&nbsp; Правила &nbsp;</a>
             </div>
             <div class="SomeTextFooter">
-                <p class="Text">&copy; @DateTime.Now.Year - City Airline is at your service<br>Author: Ryaboy V.P.<br> Group: PR-315 </p>
+                <p class="Text">&copy; @DateTime.Now.Year - CityAirline - это ваш сервис</p>
 
             </div>
         </footer>

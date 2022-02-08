@@ -1,0 +1,62 @@
+﻿@model MyFirstMVC.Models.Schedule
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление рейса №@Html.DisplayFor(model => model.ScheduleID)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Откуда
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceOfDeparture)
+        </dd>
+
+        <dt>
+            Куда
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceOfArrival)
+        </dd>
+
+        <dt>
+            Дата
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            Продано билетов
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfTicketsPurchased)
+        </dd>
+
+        <dt>
+            Всего
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalTickets)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить рейс" class="btn btn-default" /> или вернуться
+            @Html.ActionLink("Назад", "Index")?
+        </div>
+    }
+</div>

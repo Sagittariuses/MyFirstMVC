@@ -1,0 +1,97 @@
+﻿@model IEnumerable<MyFirstMVC.Models.ApplicationForTheConditionOfTheAircraft>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Заявки на осмотр самолёта</h2>
+
+<p >
+    @Html.ActionLink("Новая заявка", "Create", null, new { @style = "color: white; text-decoration: none " })
+</p>
+<table class="TextSlots">
+    <tr>
+        <th>
+            ID заявки
+        </th>
+        <th>
+            ID самолёта
+        </th>
+        <th>
+            Закрыта
+        </th>
+        <th>
+            Комментарий
+        </th>
+        <th>
+            Компания
+        </th>
+        <th>
+            Самолёт
+        </th>
+        <th>
+            Техник
+        </th>
+        <th>
+            Поставщик
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+<tr class="AllSlots">
+    <td>
+        @Html.DisplayFor(modelItem => item.ApplicationID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PlaneID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Comment)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Company)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plane.PlaneName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Stuff.Surname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Suppliers.Company)
+    </td>
+    <td>
+        <table>
+            @for (int i = 0; i < 3; i++)
+            {
+            <tr>
+                @if (i == 0)
+                {
+                    <td>
+                        @Html.ActionLink("Редактировать заявку", "Edit", new { id = item.ApplicationID })
+                    </td>
+                }
+                else if (i == 1)
+                {
+                    <td>
+                        @Html.ActionLink("Подробнее о заявке", "Details", new { id = item.ApplicationID })
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Удалить заявку", "Delete", new { id = item.ApplicationID })
+                    </td>
+                }
+            </tr>
+            }
+        </table>
+    </td>
+</tr>
+}
+
+</table>
