@@ -2,6 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #333333;
+    font-size:18px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -28,46 +29,34 @@ do {
     align-items: center;
     justify-content: center;
 }
-body div.Sales {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    margin-left: 300px;
-    padding-left: 80px;
-    border: 2px solid;
-    border-color: cyan;
-    background-color: slategrey;
-    border-radius: 50px;
+div.Sales {
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    color:white;
+    font-size:38px;
 }
-
 body footer {
     margin-top: 150px;
 }
-
 div.SomeLinksFooter {
     display: flex;
     justify-content: space-evenly;
 }
-
 div.SomeTextFooter {
     display: flex;
     justify-content: flex-end;
 }
-
 div.SomeInfoFooter {
     display: flex;
     justify-content: center;
 }
-
 footer.Footer div {
     margin: 50px;
 }
-
 p.Text {
     align-items: flex-end;
 }
-
 body div.TablesBtn {
     display: flex;
     flex-direction: column;
@@ -88,7 +77,6 @@ body button.Links {
     transition: 0.2s;
     border: none;
 }
-
 body button.Links:hover {
     border-width: 0px 0px 2px 0px;
     border-style: solid;
@@ -96,20 +84,17 @@ body button.Links:hover {
     background-color: #222222;
     transition-delay: 1.20s;
 }
-
 body button.Links:hover:focus {
     border-width: 0px 0px 2px 0px;
     border-style: solid;
     border-bottom-color: #88ffe2;
     background-color: #222222;
 }
-
 body button.Links span {
     position: absolute;
     background-color: #222222;
     display: block;
 }
-
 span:nth-child(1) {
     top: 0;
     left: -100%;
@@ -118,13 +103,11 @@ span:nth-child(1) {
     height: 2px;
     background: linear-gradient(90deg,transparent,#88ffe2);
 }
-
 body button.Links:hover span:nth-child(1) {
     left: 100%;
     transition: 1s;
     background-color: #222222;
 }
-
 span:nth-child(3) {
     bottom: 0;
     right: -100%;
@@ -133,14 +116,12 @@ span:nth-child(3) {
     background-color: #222222;
     background: linear-gradient(270deg,transparent,#88ffe2);
 }
-
 body button.Links:hover span:nth-child(3) {
     right: 100%;
     transition: 1s;
     transition-delay: 0.5s;
     background-color: #222222;
 }
-
 span:nth-child(2) {
     top: -100%;
     right: 0;
@@ -149,14 +130,12 @@ span:nth-child(2) {
     height: 100%;
     background: linear-gradient(180deg,transparent,#88ffe2);
 }
-
 body button.Links:hover span:nth-child(2) {
     top: 100%;
     transition: 1s;
     background-color: #222222;
     transition-delay: 0.25s;
 }
-
 span:nth-child(4) {
     bottom: -100%;
     left: 0;
@@ -165,7 +144,6 @@ span:nth-child(4) {
     height: 100%;
     background: linear-gradient(360deg,transparent,#88ffe2);
 }
-
 body button.Links:hover span:nth-child(4) {
     bottom: 100%;
     background-color: #222222;
@@ -185,16 +163,16 @@ body button.CityAirline {
     transition: 0.2s;
     border: none;
 }
-    body button.CityAirline:hover {
-        color: cyan;
-        background-color: #222222;
-        transition-delay: 1s;
-    }
-    body button.CityAirline span {
-        position: absolute;
-        display: block;
-        background-color: #222222;
-    }
+body button.CityAirline:hover {
+    color: cyan;
+    background-color: #222222;
+    transition-delay: 1s;
+}
+body button.CityAirline span {
+    position: absolute;
+    display: block;
+    background-color: #222222;
+}
 span:nth-child(1) {
     top: 0;
     left: -100%;
@@ -250,12 +228,61 @@ body button.CityAirline:hover span:nth-child(4) {
     transition-delay: 0.75s;
 }
 
-.AllSlots{
-    color:white
+/* Entry's css */
+tr.AllSlots td {
+    color: white;
+    margin: 100px;
+    justify-content: center;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    background-color: #1d1c1c;
+    border:solid;
+    border-left:none;
+    border-right:none;
+    border-width:1px;
+    border-radius:5px;
+    border-color: #88ffe2;
 }
-.TextSlots{
-    color: white
+.PageTitle {
+    color: #88ffe2;
 }
-.ControllerTitle{
-    color: white
+.CRUDBtns {
+    color: #88ffe2;
+    padding: 0, 0px, 0, 20px;
+    text-decoration: none;
+    width:max-content;
+    border:none;
+}
+.CRUDBtns:hover {
+        border-width: 0 0 2px 0;
+        border-style: solid;
+        color: white;
+        padding: 0, 0, 0, 22px;
+        border-bottom-color: #88ffe2;
+        text-decoration: none;
+    }    
+tr.TextSlots th {
+    color: #88ffe2;
+    width: auto;
+    height: auto;
+    padding-left: 10px
+}
+.TableSlots{
+    border:none;
+}
+div.PageTitle dd{
+    color:white;
+}
+.SaveBtn {
+    background-color: #222222;
+    border-color: #88ffe2;
+    color: #88ffe2;
+}
+.SaveBtn:hover {
+    background-color: #333333;
+    border-color: #88ffe2;
+    color: white;
+}
+.EditTexts {
+    color:#88ffe2;
 }

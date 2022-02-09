@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Расписание рейсов</h2>
+<h2 class="PageTitle">Расписание рейсов</h2>
 
-<p >
-    @Html.ActionLink("Новый рейс", "Create", null, new { @style = "color: white; text-decoration: none " })
-</p>
-<table class="TextSlots">
-    <tr>
+<p style="font-style:italic">
+    @Html.ActionLink("Новый рейс", "Create", null, new { @class = "CRUDBtns" })
+</pstyle="font-style:italic">
+<table>
+    <tr class="TextSlots">
         <th>
             Откуда
         </th>
@@ -26,54 +26,53 @@
         <th>
             Всего
         </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr class="AllSlots">
-        <td>
-            @Html.DisplayFor(modelItem => item.PlaceOfDeparture)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlaceOfArrival)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfTicketsPurchased)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalTickets)
-        </td>
-        <td>
-            <table>
-                @for (int i = 0; i < 3; i++)
-                {
-                    <tr>
-                        @if (i == 0)
-                        {
-                            <td>
-                                @Html.ActionLink("Редактировать рейс", "Edit", new { id = item.ScheduleID })
-                            </td>
-                        }
-                        else if (i == 1)
-                        {
-                            <td>
-                                @Html.ActionLink("Подробнее о рейсе", "Details", new { id = item.ScheduleID })
-                            </td>
-                        }
-                        else
-                        {
-                            <td>
-                                @Html.ActionLink("Удалить рейс", "Delete", new { id = item.ScheduleID })
-                            </td>
-                        }
-                    </tr>
-                }
-            </table>
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr class="AllSlots">
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceOfDeparture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceOfArrival)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfTicketsPurchased)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalTickets)
+            </td>
+            <td>
+                <table>
+                    @for (int i = 0; i < 3; i++)
+                    {
+                        <tr>
+                            @if (i == 0)
+                            {
+                                <th>
+                                    @Html.ActionLink("Редактировать рейс", "Edit", new { id = item.ScheduleID }, new { @class = "CRUDBtns" })
+                                </th>
+                            }
+                            else if (i == 1)
+                            {
+                                <th>
+                                    @Html.ActionLink("Подробнее о рейсе", "Details", new { id = item.ScheduleID }, new { @class = "CRUDBtns" })
+                                </th>
+                            }
+                            else
+                            {
+                                <th>
+                                    @Html.ActionLink("Удалить рейс", "Delete", new { id = item.ScheduleID }, new { @class = "CRUDBtns" })
+                                </th>
+                            }
+                        </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+    }
 </table>

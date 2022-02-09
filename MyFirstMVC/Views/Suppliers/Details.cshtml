@@ -4,9 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Контрагент №@Html.DisplayFor(model => model.SupplierID)</h2>
+<h2 class="PageTitle">Контрагент №@Html.DisplayFor(model => model.SupplierID)</h2>
 
-<div>
+<div class="PageTitle">
 
     <hr />
     <dl class="dl-horizontal">
@@ -68,7 +68,7 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Редактировать", "Edit", new { id = Model.SupplierID }) или вернуться
-    @Html.ActionLink("Назад", "Index")?
+<p style="color:white">
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.SupplierID }, new { @class = "CRUDBtns" }) или вернуться
+    @Html.ActionLink("Назад", "Index",null, new { @class = "CRUDBtns" })?
 </p>

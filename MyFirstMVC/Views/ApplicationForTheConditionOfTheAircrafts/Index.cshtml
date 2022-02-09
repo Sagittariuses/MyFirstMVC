@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Заявки на осмотр самолёта</h2>
+<h2 class="PageTitle">Заявки на осмотр самолёта</h2>
 
-<p >
-    @Html.ActionLink("Новая заявка", "Create", null, new { @style = "color: white; text-decoration: none " })
+<p style="font-style:italic">
+    @Html.ActionLink("Новая заявка", "Create", null, new { @class = "CRUDBtns" })
 </p>
-<table class="TextSlots">
-    <tr>
+<table >
+    <tr class="TextSlots">
         <th>
             ID заявки
         </th>
@@ -71,21 +71,21 @@
             <tr>
                 @if (i == 0)
                 {
-                    <td>
-                        @Html.ActionLink("Редактировать заявку", "Edit", new { id = item.ApplicationID })
-                    </td>
+                    <th>
+                        @Html.ActionLink("Редактировать заявку", "Edit", new { id = item.ApplicationID }, new { @class = "CRUDBtns" })
+                    </th>
                 }
                 else if (i == 1)
                 {
-                    <td>
-                        @Html.ActionLink("Подробнее о заявке", "Details", new { id = item.ApplicationID })
-                    </td>
+                    <th>
+                        @Html.ActionLink("Подробнее о заявке", "Details", new { id = item.ApplicationID }, new { @class = "CRUDBtns" })
+                    </th>
                 }
                 else
                 {
-                    <td>
-                        @Html.ActionLink("Удалить заявку", "Delete", new { id = item.ApplicationID })
-                    </td>
+                    <th>
+                        @Html.ActionLink("Удалить заявку", "Delete", new { id = item.ApplicationID }, new { @class = "CRUDBtns" })
+                    </th>
                 }
             </tr>
             }

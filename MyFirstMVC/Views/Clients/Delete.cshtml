@@ -4,9 +4,9 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Удаление клиента №@Html.DisplayFor(model => model.ClientID)</h2>
+<h2 class="PageTitle">Удаление клиента №@Html.DisplayFor(model => model.ClientID)</h2>
 
-<div>
+<div class="PageTitle">
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -94,9 +94,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Удалить" class="btn btn-default" /> или вернуться 
-            @Html.ActionLink("Назад", "Index")?
+        <div class="form-actions no-color" style="color:white">
+            <input type="submit" value="Удалить" class="SaveBtn" /> или вернуться 
+            @Html.ActionLink("Назад", "Index", null, new { @class = "CRUDBtns" })?
         </div>
     }
 </div>

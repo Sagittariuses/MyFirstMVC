@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Контрагенты</h2>
+<h2 class="PageTitle">Контрагенты</h2>
 
-<p>
-    @Html.ActionLink("Добавить контрагента", "Create")
+<p style="font-style:italic">
+    @Html.ActionLink("Добавить контрагента", "Create", null, new { @class = "CRUDBtns" })
 </p>
-<table class="TextSlots">
-    <tr>
+<table >
+    <tr  class="TextSlots">
         <th>
             Компания
         </th>
@@ -32,7 +32,6 @@
         <th>
             Почта
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -65,21 +64,21 @@
                     <tr>
                         @if (i == 0)
                         {
-                            <td>
-                                @Html.ActionLink("Редактировать контрагента", "Edit", new { id = item.SupplierID })
-                            </td>
+                            <th>
+                                @Html.ActionLink("Редактировать контрагента", "Edit", new { id = item.SupplierID }, new { @class = "CRUDBtns" })
+                            </th>
                         }
                         else if (i == 1)
                         {
-                            <td>
-                                @Html.ActionLink("Подробнее о контрагенте", "Details", new { id = item.SupplierID })
-                            </td>
+                            <th>
+                                @Html.ActionLink("Подробнее о контрагенте", "Details", new { id = item.SupplierID }, new { @class = "CRUDBtns" })
+                            </th>
                         }
                         else
                         {
-                            <td>
-                                @Html.ActionLink("Удалить контрагента", "Delete", new { id = item.SupplierID })
-                            </td>
+                            <th>
+                                @Html.ActionLink("Удалить контрагента", "Delete", new { id = item.SupplierID }, new { @class = "CRUDBtns" })
+                            </th>
                         }
                     </tr>
                 }

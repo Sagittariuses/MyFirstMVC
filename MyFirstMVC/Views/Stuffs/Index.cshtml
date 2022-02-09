@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Сотрудники</h2>
+<h2 class="PageTitle">Сотрудники</h2>
 
-<p >
-    @Html.ActionLink("Добавление сотрудника", "Create", null, new { @style = "color: white; text-decoration: none " })
+<p style="font-style:italic">
+    @Html.ActionLink("Добавление сотрудника", "Create", null, new { @class = "CRUDBtns" })
 </p>
-<table class="TextSlots">
-    <tr>
+<table>
+    <tr  class="TextSlots">
         <th>
             Фамилия
         </th>
@@ -38,7 +38,6 @@
         <th>
             Должность
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -77,21 +76,21 @@
                     <tr>
                         @if (i == 0)
                         {
-                            <td>
-                                @Html.ActionLink("Редактировать сотрудника", "Edit", new { id = item.StuffID })
-                            </td>
+                            <th>
+                                @Html.ActionLink("Редактировать сотрудника", "Edit", new { id = item.StuffID }, new { @class = "CRUDBtns" })
+                            </th>
                         }
                         else if (i == 1)
                         {
-                            <td>
-                                @Html.ActionLink("Подробнее о сотруднике", "Details", new { id = item.StuffID })
-                            </td>
+                            <th>
+                                @Html.ActionLink("Подробнее о сотруднике", "Details", new { id = item.StuffID }, new { @class = "CRUDBtns" })
+                            </th>
                         }
                         else
                         {
-                            <td>
-                                @Html.ActionLink("Удалить сотрудника", "Delete", new { id = item.StuffID })
-                            </td>
+                            <th>
+                                @Html.ActionLink("Удалить сотрудника", "Delete", new { id = item.StuffID }, new { @class = "CRUDBtns" })
+                            </th>
                         }
                     </tr>
                 }

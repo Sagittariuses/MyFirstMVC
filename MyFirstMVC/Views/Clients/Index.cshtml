@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Клиенты</h2>
+<h2 class="PageTitle">Клиенты</h2>
 
-<p >
-    @Html.ActionLink("Новый клиент", "Create", null, new { @style = "color: white; text-decoration: none " })
+<p style="font-style:italic">
+    @Html.ActionLink("Новый клиент", "Create", null, new { @class = "CRUDBtns" })
 </p>
-<table class="TextSlots">
-    <tr>
+<table>
+    <tr class="TextSlots">
         <th>
             Фамилия
         </th>
@@ -41,7 +41,6 @@
         <th>
             Тип
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -83,21 +82,21 @@
                 <tr>
                     @if (i == 0)
                     {
-                        <td>
-                            @Html.ActionLink("Редактировать клиента", "Edit", new { id = item.ClientID })
-                        </td>
+                        <th>
+                            @Html.ActionLink("Редактировать клиента", "Edit", new { id = item.ClientID }, new { @class = "CRUDBtns" })
+                        </th>
                     }
                     else if (i == 1)
                     {
-                        <td>
-                            @Html.ActionLink("Подробнее о клиенте", "Details", new { id = item.ClientID })
-                        </td>
+                        <th>
+                            @Html.ActionLink("Подробнее о клиенте", "Details", new { id = item.ClientID }, new { @class = "CRUDBtns" })
+                        </th>
                     }
                     else
                     {
-                        <td>
-                            @Html.ActionLink("Удалить клиента", "Delete", new { id = item.ClientID })
-                        </td>
+                        <th>
+                            @Html.ActionLink("Удалить клиента", "Delete", new { id = item.ClientID }, new { @class = "CRUDBtns" })
+                        </th>
                     }
                 </tr>
             }

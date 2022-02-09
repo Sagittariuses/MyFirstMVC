@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="ControllerTitle">Парк самолётов</h2>
+<h2 class="PageTitle">Парк самолётов</h2>
 
-<p >
-    @Html.ActionLink("Добавить самолёт", "Create", null, new { @style = "color: white; text-decoration: none " })
+<p style="font-style:italic">
+    @Html.ActionLink("Добавить самолёт", "Create", null, new { @class = "CRUDBtns" })
 </p>
-<table class="TextSlots">
-    <tr>
+<table >
+    <tr class="TextSlots">
         <th>
             Название
         </th>
@@ -44,8 +44,6 @@
         <th>
             Контрагент
         </th>
-
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -64,7 +62,7 @@
                 @Html.DisplayFor(modelItem => item.NumberOfUnitsInThePark)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Length)
@@ -74,6 +72,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CruisingSpeed)
+            <td>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MaximumFlightAltitude)
@@ -91,21 +90,22 @@
                         <tr>
                             @if (i == 0)
                             {
-                                <td>
-                                    @Html.ActionLink("Редактировать самолёт", "Edit", new { id = item.PlaneID })
-                                </td>
+                            <th>
+
+                                @Html.ActionLink("Редактировать самолёт", "Edit", new { id = item.PlaneID }, new { @class = "CRUDBtns" })
+                            </th>
                             }
                             else if (i == 1)
                             {
-                                <td>
-                                    @Html.ActionLink("Подробнее о самолёте", "Details", new { id = item.PlaneID })
-                                </td>
+                                <th>
+                                    @Html.ActionLink("Подробнее о самолёте", "Details", new { id = item.PlaneID }, new { @class = "CRUDBtns" })
+                                </th>
                             }
                             else
                             {
-                                <td>
-                                    @Html.ActionLink("Удалить самолёт", "Delete", new { id = item.PlaneID })
-                                </td>
+                                <th>
+                                    @Html.ActionLink("Удалить самолёт", "Delete", new { id = item.PlaneID }, new { @class = "CRUDBtns" })
+                                </th>
                             }
                         </tr>
                     }
